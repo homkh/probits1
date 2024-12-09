@@ -1,0 +1,323 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Custom font family */
+  @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/Gotham-Black.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/Gotham-BlackItalic.otf") format("opentype");
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/Gotham-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/Gotham-BoldItalic.otf") format("opentype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/Gotham-Book.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/Gotham-BookItalic.otf") format("opentype");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/Gotham-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/Gotham-LightItalic.otf") format("opentype");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/Gotham-Medium.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/Gotham-MediumItalic.otf") format("opentype");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/Gotham-Thin.otf") format("opentype");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/Gotham-ThinItalic.otf") format("opentype");
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/Gotham-Ultra.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/Gotham-UltraItalic.otf") format("opentype");
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/Gotham-XLight.otf") format("opentype");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/Gotham-XLightItalic.otf") format("opentype");
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  /* Base styles */
+  :root {
+    --background-color-dark: 0 0% 0%;
+    --text-color-dark: 0 0% 100%;
+    --background-color-light: 0 0% 100%;
+    --text-color-light: 0 0% 0%;
+  }
+
+  html,
+  body {
+    font-family: "Gotham", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    background-color: hsl(var(--background-color-dark)) !important;
+    color: hsl(var(--text-color-dark)) !important;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+  }
+
+  @media (prefers-color-scheme: light) {
+    html,
+    body {
+      background-color: hsl(var(--background-color-light));
+      color: hsl(var(--text-color-light));
+      font-family: "Gotham", sans-serif;
+    }
+  }
+
+  h1 {
+    @apply text-5xl font-bold text-white;
+  }
+  input:user-valid {
+    border-color: green;
+  }
+  input:user-invalid {
+    border-color: red;
+  }
+}
+
+/* Phone input customization */
+.PhoneInput {
+  display: flex;
+  align-items: center;
+}
+
+.PhoneInputInput {
+  padding-left: 0.3em;
+  background-color: #090f1a;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+.PhoneInputCountry {
+  margin-left: 0.5em;
+}
+
+.PhoneInputInput:focus {
+  outline: none;
+  border: none;
+}
+
+.PhoneInputInput:invalid {
+  outline: none;
+  border: none;
+}
+
+.PhoneInputCountrySelectArrow {
+  padding-left: 4px;
+  color: white;
+  border-color: white;
+  opacity: 1;
+}
+
+.phone-input:focus {
+  border-color: #6366f1;
+}
+
+/* Custom loader */
+.loader {
+  width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #1253df;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+/* Override the react slick dots */
+.slick-dots li button:before {
+  color: rgb(179, 178, 178) !important;
+  font-size: 13px !important;
+  margin-top: 15px;
+}
+
+.slick-dots li.slick-active button:before {
+  color: white !important;
+  font-size: 13px !important;
+}
+
+@media (max-width: 600px) {
+  .slick-dots li button:before {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 10px !important;
+  }
+
+  .slick-dots li.slick-active button:before {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 10px !important;
+  }
+}
+
+/* Hide scrollbars */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* animation for the earth scrolling */
+/* @keyframes earth-scroll{
+  0% {
+    transform: translateX(-50);
+    opacity: 1;
+  }
+  20%{
+    transform: translateY(50px);
+    opacity: 0.5;
+  }
+  40%{
+    transform: translateY(50px);
+    opacity: 0.5;
+  }
+  60%{
+    transform: translateY(100px);
+  }
+  100%{
+    transform: translateZ(10px);
+    opacity: 0.5;
+  }
+} */
+
+@keyframes moveEarth {
+  0% {
+    transform: translateY(-50%) translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(100%) translateX(-50%);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-20%) translateX(20%);
+    opacity: 0.5;
+  }
+}
+
+.move-earth {
+  animation: moveEarth 10s ease-in-out forwards;
+}
+
+/* code for the smoot card effect */
+.collapsible {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.collapsible.open {
+  max-height: 1000px; 
+  opacity: 1;
+}

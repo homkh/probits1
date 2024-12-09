@@ -1,0 +1,19 @@
+# Ignore artifacts:
+build
+coverage
+components.json
+package-lock.json
+package.json
+next.config.mjs
+tailwind.config.ts
+.eslintrc.json
+
+# next
+.next/
+
+# git hub
+.gitignore
+.env
+.env.*
+
+# src/styles/globals.css
